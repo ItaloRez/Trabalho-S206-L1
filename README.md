@@ -6,26 +6,16 @@ Este é um projeto de teste de automação com o framework Cypress para o site h
 
 Para executar os testes, você precisa ter o Node.js e o Cypress instalados em sua máquina.
 
-Faça o clone deste repositório: git clone https://github.com/seu-usuario/nome-do-repositorio.git
-Instale as dependências: npm install
-Execute os testes: npm run cypress:open ou npm run cypress:spec
+Faça o clone deste repositório: git clone https://github.com/ItaloRez/Trabalho-S206-L1.git
+Instale as dependências: `npm install` 
+Execute os testes: `npm run cypress:open` ou `npm run cypress:spec`
 Scripts de Execução
 Os seguintes scripts são fornecidos para facilitar a execução dos testes:
 
-npm run cypress:open: Abre a interface gráfica do Cypress para selecionar os testes que deseja executar.
-npm run cypress:spec: Executa todos os testes especificados no diretório cypress/e2e.
+- `npm run cypress:open`: Abre a interface gráfica do Cypress para selecionar os testes que deseja executar.
+- `npm run cypress:spec`: Executa todos os testes especificados no diretório cypress/e2e.
 
 ## Estrutura do Projeto
-
-A estrutura do projeto é organizada da seguinte maneira:
-
-├── cypress
-│ ├── e2e
-│ │ ├── spec.cy.js
-├── .gitignore
-├── cypress.json
-├── package-lock.json
-├── package.json
 
 O projeto contém os seguintes testes automatizados:
 
