@@ -1,0 +1,9 @@
+# Cypress files
+cypress/screenshots/
+cypress/videos/
+cypress/fixtures/*.json
+cypress.env.json
+
+# Node files
+node_modules/
+package-lock.json

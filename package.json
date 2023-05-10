@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "cypress": "^12.12.0"
+  },
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:spec": "cypress run --spec 'cypress/e2e/**/*'"
+  },
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^3.4.0"
+  }
+}
