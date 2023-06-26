@@ -71,6 +71,64 @@ describe("Criando cenários de teste para o site saucedemo", () => {
 
     cy.get(".complete-header").should("contain", "Thank you for your order!");
   });
+
+  it("Caso de teste: Tentativa de finalizar compra sem preencher os campos", () => {
+    cy.login("standard_user", "secret_sauce");
+
+    adicionarProdutoAoCarrinho("sauce-labs-backpack");
+
+    cy.get(".shopping_cart_link").click();
+
+    cy.get(".cart_item").should("contain", "Sauce Labs Backpack");
+
+    cy.get('[data-test="checkout"]').click();
+
+    cy.get('[data-test="continue"]').click();
+
+    cy.get('[data-test="error"]').should(
+      "contain",
+      "Error: First Name is required"
+    );
+  });
+
+  it("Caso de teste: Tentativa de finalizar compra sem preencher o campo Zip Postal Code", () => {
+    cy.login("standard_user", "secret_sauce");
+
+    adicionarProdutoAoCarrinho("sauce-labs-backpack");
+
+    cy.get(".shopping_cart_link").click();
+
+    cy.get(".cart_item").should("contain", "Sauce Labs Backpack");
+
+    cy.get('[data-test="checkout"]').click();
+
+    cy.get('[data-test="firstName"]').type("Teste");
+
+    cy.get('[data-test="lastName"]').type("Teste");
+
+    cy.get('[data-test="continue"]').click();
+
+    cy.get('[data-test="error"]').should(
+      "contain",
+      "Error: Postal Code is required"
+    );
+  });
+
+  it("Caso de teste: Ao voltar para a tela de produtos, os produtos adicionados ao carrinho devem continuar lá", () => {
+    cy.login("standard_user", "secret_sauce");
+
+    adicionarProdutoAoCarrinho("sauce-labs-backpack");
+
+    cy.get(".shopping_cart_link").click();
+
+    cy.get(".cart_item").should("contain", "Sauce Labs Backpack");
+
+    cy.get('[data-test="continue-shopping"]').click();
+
+    cy.get(".shopping_cart_link").click();
+
+    cy.get(".cart_item").should("contain", "Sauce Labs Backpack");
+  });
 });
 
 function adicionarProdutoAoCarrinho(produto) {
